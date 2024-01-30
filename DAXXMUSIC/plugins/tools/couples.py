@@ -96,11 +96,10 @@ async def ctest(_, message):
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**𝐓ᴏᴅᴀʏ's 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐂ᴏᴜᴘʟᴇs 🎉 :
-➖➖➖➖➖➖➖➖➖➖➖➖
-{N1} + {N2} = ❣️
-➖➖➖➖➖➖➖➖➖➖➖➖
-𝐍ᴇxᴛ 𝐂ᴏᴜᴘʟᴇs 𝐖ɪʟʟ 𝐁ᴇ 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐎ɴ {tomorrow} !!**
+**Pasangan hari ini sudah dipilih:
+{N1} + {N2} = ❤️
+
+Pasangan baru akan dipilih pada {tomorrow}**
 """
     
          await message.reply_photo(f"test_{cid}.png", caption=TXT)
