@@ -132,13 +132,12 @@ async def greet_group(_, member: ChatMemberUpdated):
             member.chat.id,
             photo=welcomeimg,
             caption=f"""
-**Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
-➖➖➖➖➖➖➖➖➖➖➖➖
-Nᴀᴍᴇ ✧ {user.mention}
-Iᴅ ✧ {user.id}
-Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
-➖➖➖➖➖➖➖➖➖➖➖➖**
-""",
+**WELCOME TO {member.chat.title}
+╭━━━━━━━━━━━━━━━━━━━━
+┞◈ Nama  : {user.mention}
+┟◈ ID         : `{user.id}`
+┟◈ Usn      : @{user.username}
+╰━━━━━━━━━━━━━━━━━━━━**""",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/YumikooBot?startgroup=true")]])
         )
     except Exception as e:
