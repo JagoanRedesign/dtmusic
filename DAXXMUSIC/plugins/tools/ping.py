@@ -11,6 +11,8 @@ import aiohttp
 import asyncio
 from io import BytesIO
 from PIL import Image, ImageEnhance  # Add these imports
+from DAXXMUSIC.utils.inline import ping_pannel
+
 
 async def make_carbon(code):
     url = "https://carbonara.solopov.dev/api/cook"
@@ -35,6 +37,7 @@ async def make_carbon(code):
 @language
 async def ping_com(client, message: Message, _):
     PING_IMG_URL = "https://telegra.ph/file/37b57c6aaaa793bba055a.jpg"
+    out = ping_panel(_)
     captionss = "**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ.**"
     response = await message.reply_photo(PING_IMG_URL, caption=(captionss))
     await asyncio.sleep(1)
@@ -57,31 +60,8 @@ async def ping_com(client, message: Message, _):
     resp = (datetime.now() - start).microseconds / 1000
     text =  _["ping_2"].format(resp, app.name, UP, RAM, CPU, DISK, pytgping)
     carbon = await make_carbon(text)
-    captions = "**ㅤ  🏓 ᴘɪɴɢ...ᴘᴏɴɢ...ᴘɪɴɢ✨\nㅤ  🎸 ᴅɪɴɢ...ᴅᴏɴɢ...ᴅɪɴɢ💞**"
+    captions = "**ㅤ  🏓 ᴘᴏɴɢ...**"
     await message.reply_photo((carbon), caption=captions,
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            )
-        
-        ],
-        [
-            InlineKeyboardButton(
-                text="✦ ɢʀᴏᴜᴘ ✦", url=f"https://t.me/HEROKUFREECC",
-            ),
-            InlineKeyboardButton(
-                text="✧ ᴍᴏʀᴇ ✧", url=f"https://t.me/ALLTYPECC",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="❅ ʜᴇʟᴘ ❅", callback_data="settings_back_helper"
-            )
-        ],
-    ]
-    ),
+    reply_markup=InlineKeyboardMarkup(out),
         )
     await response.delete()
