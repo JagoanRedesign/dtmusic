@@ -11,7 +11,7 @@ import aiohttp
 import asyncio
 from io import BytesIO
 from PIL import Image, ImageEnhance  # Add these imports
-from DAXXMUSIC.utils.inline import ping_pannel
+from DAXXMUSIC.utils.inline.start import ping_pannel
 
 
 async def make_carbon(code):
